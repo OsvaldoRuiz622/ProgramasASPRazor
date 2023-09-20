@@ -1,0 +1,26 @@
+﻿@page
+@model Programas_Tarea.Pages.ArregloModel
+@{
+}
+<h1>@ViewData["Title"]</h1>
+
+<form method="post">
+    <input type="submit" value="GENERAR" />
+</form>
+
+@if (Model.NumerosGenerados != null)
+{
+    <h2>Números Generados:</h2>
+    <ul>
+        @foreach (var numero in Model.NumerosGenerados)
+        {
+            <li>@numero</li>
+        }
+    </ul>
+
+    <h2>Resultados:</h2>
+    <p>Suma: @Model.Suma</p>
+    <p>Promedio: @Model.Promedio</p>
+    <p>Moda: @Model.Moda</p>
+    <p>Mediana: @Model.Mediana</p>
+}
